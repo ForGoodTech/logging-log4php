@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - 2.3.x
-      - maintenance/**
   workflow_dispatch:
 
 permissions:
