@@ -267,8 +267,9 @@ class LoggerConfigurationAdapterXML implements LoggerConfigurationAdapter
 	// ** Helper methods                       **
 	// ******************************************
 	
-	private function getAttributeValue(SimpleXMLElement $node, $name) {
-		return isset($node[$name]) ? (string) $node[$name] : null;
+	private function getAttributeValue(SimpleXMLElement $node, $name): ?string {
+		$attributes = $node->attributes();
+		return isset($attributes[$name]) ? strval($attributes[$name]) : null;
 	}
 	
 	private function warn($message) {

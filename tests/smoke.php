@@ -75,6 +75,12 @@ XML;
         throw new RuntimeException("Could not write temporary configuration [$configPath].");
     }
 
+    $parsedConfiguration = (new LoggerConfigurationAdapterXML())->convert($configPath);
+    $parsedFile = $parsedConfiguration['appenders']['default']['params']['file'] ?? null;
+    if (!is_string($parsedFile) || $parsedFile !== $logPattern) {
+        throw new RuntimeException('XML adapter did not normalize parameter attributes to strings.');
+    }
+
     Logger::configure($configPath);
     Logger::getRootLogger()->info($message);
     Logger::shutdown();
