@@ -188,7 +188,7 @@ class LoggerOptionConverter {
 		if (is_numeric($value)) {
 			return (string) $value;
 		}
-		if (is_object($value) && method_exists($value, '__toString')) {
+		if ($value instanceof Stringable) {
 			return (string) $value;
 		}
 	

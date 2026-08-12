@@ -81,6 +81,11 @@ XML;
         throw new RuntimeException('XML adapter did not normalize parameter attributes to strings.');
     }
 
+    $stringableValue = simplexml_load_string('<value>stringable-value</value>');
+    if (LoggerOptionConverter::toStringEx($stringableValue) !== 'stringable-value') {
+        throw new RuntimeException('Stringable option value was not normalized to a native string.');
+    }
+
     Logger::configure($configPath);
     Logger::getRootLogger()->info($message);
     Logger::shutdown();

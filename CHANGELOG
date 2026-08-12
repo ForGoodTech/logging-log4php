@@ -10,7 +10,7 @@ ForGoodTech 2.3.1
 * Removed implicit float-to-integer timestamp conversions in date formatting.
 * Made the base layout's header and footer honor their documented string type.
 * Declared nullable typed parameters explicitly for PHP 8.4 and newer.
-* Normalized SimpleXML attribute values to native strings for PHP 8.5.
+* Normalized SimpleXML and other Stringable option values for PHP 8.5.
 * Added Composer-autoload, XML-configuration, daily-file, and throwable smoke
   tests.
 
