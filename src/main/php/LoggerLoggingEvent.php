@@ -115,7 +115,7 @@ class LoggerLoggingEvent {
 	* @param LoggerLevel $level The level of this event.
 	* @param mixed $message The message of this event.
 	* @param integer $timeStamp the timestamp of this logging event.
-	* @param Exception $throwable The throwable associated with logging event
+	* @param Throwable $throwable The throwable associated with logging event
 	*/
 	public function __construct($fqcn, $logger, LoggerLevel $level, $message, $timeStamp = null, $throwable = null) {
 		$this->fqcn = $fqcn;
@@ -133,7 +133,7 @@ class LoggerLoggingEvent {
 			$this->timeStamp = microtime(true);
 		}
 		
-		if ($throwable !== null && $throwable instanceof Exception) {
+		if ($throwable !== null && $throwable instanceof Throwable) {
 			$this->throwableInfo = new LoggerThrowableInformation($throwable);
 		}
 	}

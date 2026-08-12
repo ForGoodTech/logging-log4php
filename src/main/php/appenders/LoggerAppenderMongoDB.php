@@ -193,14 +193,14 @@ class LoggerAppenderMongoDB extends LoggerAppender {
 	}
 	
 	/**
-	 * Converts an Exception into an array which can be logged to mongodb.
+	 * Converts a Throwable into an array which can be logged to mongodb.
 	 * 
-	 * Supports innner exceptions (PHP >= 5.3)
+	 * Supports inner throwables.
 	 * 
-	 * @param Exception $ex
+	 * @param Throwable $ex
 	 * @return array
 	 */
-	protected function formatThrowable(Exception $ex) {
+	protected function formatThrowable(Throwable $ex) {
 		$array = array(				
 			'message' => $ex->getMessage(),
 			'code' => $ex->getCode(),

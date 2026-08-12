@@ -1,3 +1,30 @@
+ForGoodTech log4php
+===================
+
+This repository is a narrowly maintained PHP 8 compatibility fork of Apache
+log4php 2.3.0. It exists to support legacy ForGoodTech applications while they
+migrate to a maintained PSR-3 logger. New features are out of scope.
+
+The maintained line supports the currently supported PHP 8.2 through PHP 8.5
+branches. Every release is tested against each of those versions.
+
+Install a tagged release with Composer:
+
+    composer require forgoodtech/log4php:^2.3.1
+
+Load the generated autoloader before configuring the logger:
+
+    require_once __DIR__ . '/vendor/autoload.php';
+    Logger::configure(__DIR__ . '/p/log4php_daily.xml');
+
+Applications should commit their own composer.json and composer.lock files,
+exclude vendor/ from source control, and include the generated vendor/ tree in
+each deployment artifact. Production servers do not need Composer or network
+access.
+
+Upstream
+========
+
 Apache log4php is a versatile logging framework for PHP.
 
 Apache log4php is a project at the Apache Software Foundation (ASF).
@@ -7,5 +34,6 @@ http://logging.apache.org/log4php/
 
 Project Status
 ==============
-Apache log4php is a sub project of the Apache Logging Services project. 
-Apache log4php graduated from the Apache Incubator in March 2010.
+Apache log4php graduated from the Apache Incubator in March 2010 and entered
+dormant status in December 2020. This fork is maintained independently by
+ForGoodTech and is not an Apache Software Foundation project.

@@ -26,7 +26,7 @@
  */
 class LoggerThrowableInformation {
 	
-	/** @var Exception Throwable to log */
+	/** @var Throwable Throwable to log */
 	private $throwable;
 	
 	/** @var array Array of throwable messages */
@@ -34,19 +34,18 @@ class LoggerThrowableInformation {
 	
 	/**
 	 * Create a new instance
-	 * 
-	 * @param $throwable - a throwable as a exception
-	 * @param $logger - Logger reference
+	 *
+	 * @param Throwable $throwable Throwable to log
 	 */
-	public function __construct(Exception $throwable) {
+	public function __construct(Throwable $throwable) {
 		$this->throwable = $throwable;
 	}
 	
 	/**
-	* Return source exception
-	* 
-	* @return Exception
-	*/
+	 * Return source throwable.
+	 *
+	 * @return Throwable
+	 */
 	public function getThrowable() {
 		return $this->throwable;
 	}

@@ -1,19 +1,27 @@
 {
-    "name": "apache/log4php",
-    "description": "A versatile logging framework for PHP",
+    "name": "forgoodtech/log4php",
+    "description": "A maintained PHP 8 compatibility fork of Apache log4php 2.3",
     "keywords": ["log", "logging", "php"],
-    "homepage": "http://logging.apache.org/log4php/",
+    "homepage": "https://github.com/ForGoodTech/logging-log4php",
     "type": "library",
     "license": "Apache-2.0",
     "support": {
-        "issues": "https://issues.apache.org/jira/browse/LOG4PHP",
-        "source": "https://svn.apache.org/repos/asf/logging/log4php",
-        "email": "log4php-user@logging.apache.org"
+        "issues": "https://github.com/ForGoodTech/logging-log4php/issues",
+        "source": "https://github.com/ForGoodTech/logging-log4php"
     },
     "autoload": {
         "classmap": ["src/main/php/"]
     },
     "require": {
-        "php": ">=5.2.7"
+        "php": ">=8.2 <8.6"
+    },
+    "replace": {
+        "apache/log4php": "self.version"
+    },
+    "scripts": {
+        "test": "php tests/smoke.php"
+    },
+    "config": {
+        "sort-packages": true
     }
 }

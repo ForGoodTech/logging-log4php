@@ -1,6 +1,15 @@
 Apache log4php Changelog
 ========================
 
+ForGoodTech 2.3.1
+-----------------
+
+* Added a supported PHP 8.2-8.5 compatibility matrix.
+* Replaced the removed each() function used while applying configuration.
+* Added support for logging all Throwable instances, including PHP Error.
+* Added Composer-autoload, XML-configuration, daily-file, and throwable smoke
+  tests.
+
 Please refer to src/changes/changes.xml for the latest changes.
 
 Changes for stable versions may be found online at: 
