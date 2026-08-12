@@ -61,4 +61,3 @@ class LoggerPatternConverterClass extends LoggerPatternConverter {
 		return $this->cache[$name];
 	}
 }
- 
