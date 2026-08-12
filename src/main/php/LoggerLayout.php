@@ -56,7 +56,7 @@ abstract class LoggerLayout extends LoggerConfigurable {
 	 * @return string
 	 */
 	public function getFooter() {
-		return null;
+		return '';
 	} 
 
 	/**
@@ -64,7 +64,7 @@ abstract class LoggerLayout extends LoggerConfigurable {
 	 * @return string
 	 */
 	public function getHeader() {
-		return null;
+		return '';
 	}
 	
 	/** Triggers a warning for this layout with the given message. */

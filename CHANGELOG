@@ -8,6 +8,7 @@ ForGoodTech 2.3.1
 * Replaced the removed each() function used while applying configuration.
 * Added support for logging all Throwable instances, including PHP Error.
 * Removed implicit float-to-integer timestamp conversions in date formatting.
+* Made the base layout's header and footer honor their documented string type.
 * Added Composer-autoload, XML-configuration, daily-file, and throwable smoke
   tests.
 
