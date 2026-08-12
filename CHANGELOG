@@ -11,6 +11,7 @@ ForGoodTech 2.3.1
 * Made the base layout's header and footer honor their documented string type.
 * Declared nullable typed parameters explicitly for PHP 8.4 and newer.
 * Normalized SimpleXML and other Stringable option values for PHP 8.5.
+* Replaced non-canonical integer casts deprecated by PHP 8.5.
 * Added Composer-autoload, XML-configuration, daily-file, and throwable smoke
   tests.
 
