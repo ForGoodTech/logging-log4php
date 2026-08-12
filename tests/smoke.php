@@ -89,6 +89,24 @@ XML;
         throw new RuntimeException("Unexpected daily-file contents: " . var_export($contents, true));
     }
 
+    $patternTimestamp = 1700000000.5;
+    $patternEvent = new LoggerLoggingEvent(
+        'ForGoodTechSmokeTest',
+        Logger::getRootLogger(),
+        LoggerLevel::getLevelInfo(),
+        'Pattern timestamp test',
+        $patternTimestamp
+    );
+    $patternLayout = new LoggerLayoutPattern();
+    $patternLayout->setConversionPattern('%d{Y-m-d H:i:s.u} %p - %m');
+    $patternLayout->activateOptions();
+    $expectedPattern = date('Y-m-d H:i:s', (int)$patternTimestamp)
+        . '.500 INFO - Pattern timestamp test';
+
+    if ($patternLayout->format($patternEvent) !== $expectedPattern) {
+        throw new RuntimeException('Pattern layout did not preserve the event timestamp.');
+    }
+
     $error = new Error('forgoodtech-throwable-smoke');
     $event = new LoggerLoggingEvent(
         'ForGoodTechSmokeTest',

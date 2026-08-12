@@ -7,6 +7,7 @@ ForGoodTech 2.3.1
 * Added a supported PHP 8.2-8.5 compatibility matrix.
 * Replaced the removed each() function used while applying configuration.
 * Added support for logging all Throwable instances, including PHP Error.
+* Removed implicit float-to-integer timestamp conversions in date formatting.
 * Added Composer-autoload, XML-configuration, daily-file, and throwable smoke
   tests.
 
