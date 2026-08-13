@@ -1,6 +1,20 @@
 Apache log4php Changelog
 ========================
 
+ForGoodTech 2.3.1
+-----------------
+
+* Added a supported PHP 8.2-8.5 compatibility matrix.
+* Replaced the removed each() function used while applying configuration.
+* Added support for logging all Throwable instances, including PHP Error.
+* Removed implicit float-to-integer timestamp conversions in date formatting.
+* Made the base layout's header and footer honor their documented string type.
+* Declared nullable typed parameters explicitly for PHP 8.4 and newer.
+* Normalized SimpleXML and other Stringable option values for PHP 8.5.
+* Replaced non-canonical integer casts deprecated by PHP 8.5.
+* Added Composer-autoload, XML-configuration, daily-file, and throwable smoke
+  tests.
+
 Please refer to src/changes/changes.xml for the latest changes.
 
 Changes for stable versions may be found online at: 

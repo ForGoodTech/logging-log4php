@@ -98,7 +98,7 @@ class Logger {
 	 * Log a message object with the TRACE level.
 	 *
 	 * @param mixed $message message
- 	 * @param Exception $throwable Optional throwable information to include 
+	 * @param Throwable $throwable Optional throwable information to include
 	 *   in the logging event.
 	 */
 	public function trace($message, $throwable = null) {
@@ -109,7 +109,7 @@ class Logger {
 	 * Log a message object with the DEBUG level.
 	 *
 	 * @param mixed $message message
- 	 * @param Exception $throwable Optional throwable information to include 
+	 * @param Throwable $throwable Optional throwable information to include
 	 *   in the logging event.
 	 */
 	public function debug($message, $throwable = null) {
@@ -120,7 +120,7 @@ class Logger {
 	 * Log a message object with the INFO Level.
 	 *
 	 * @param mixed $message message
- 	 * @param Exception $throwable Optional throwable information to include 
+	 * @param Throwable $throwable Optional throwable information to include
 	 *   in the logging event.
 	 */
 	public function info($message, $throwable = null) {
@@ -131,7 +131,7 @@ class Logger {
 	 * Log a message with the WARN level.
 	 *
 	 * @param mixed $message message
-  	 * @param Exception $throwable Optional throwable information to include 
+	 * @param Throwable $throwable Optional throwable information to include
 	 *   in the logging event.
 	 */
 	public function warn($message, $throwable = null) {
@@ -142,7 +142,7 @@ class Logger {
 	 * Log a message object with the ERROR level.
 	 *
 	 * @param mixed $message message
-	 * @param Exception $throwable Optional throwable information to include 
+	 * @param Throwable $throwable Optional throwable information to include
 	 *   in the logging event.
 	 */
 	public function error($message, $throwable = null) {
@@ -153,7 +153,7 @@ class Logger {
 	 * Log a message object with the FATAL level.
 	 *
 	 * @param mixed $message message
-	 * @param Exception $throwable Optional throwable information to include 
+	 * @param Throwable $throwable Optional throwable information to include
 	 *   in the logging event.
 	 */
 	public function fatal($message, $throwable = null) {
@@ -165,7 +165,7 @@ class Logger {
 	 *
 	 * @param LoggerLevel $level The logging level.
 	 * @param mixed $message Message to log.
- 	 * @param Exception $throwable Optional throwable information to include 
+	 * @param Throwable $throwable Optional throwable information to include
 	 *   in the logging event.
 	 */
 	public function log(LoggerLevel $level, $message, $throwable = null) {
@@ -223,7 +223,7 @@ class Logger {
 	 * wrappers.
 	 *
 	 * @param string $fqcn Fully qualified class name of the Logger
-	 * @param Exception $throwable Optional throwable information to include 
+	 * @param Throwable $throwable Optional throwable information to include
 	 *   in the logging event.
 	 * @param LoggerLevel $level log level	   
 	 * @param mixed $message message to log
@@ -405,7 +405,7 @@ class Logger {
 	 *
 	 * @param LoggerLevel $level The level to set, or NULL to clear the logger level.
 	 */
-	public function setLevel(LoggerLevel $level = null) {
+	public function setLevel(?LoggerLevel $level = null) {
 		$this->level = $level;
 	}
 	

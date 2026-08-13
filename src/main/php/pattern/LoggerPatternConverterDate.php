@@ -71,7 +71,7 @@ class LoggerPatternConverterDate extends LoggerPatternConverter {
 		if ($this->useLocalDate) {
 			return $this->date($this->format, $event->getTimeStamp());
 		}
-		return date($this->format, $event->getTimeStamp());
+		return date($this->format, (int)$event->getTimeStamp());
 	}
 	
 	/**
@@ -82,7 +82,7 @@ class LoggerPatternConverterDate extends LoggerPatternConverter {
 	 * It is slower than PHP date() so it should only be used if necessary. 
 	 */
 	private function date($format, $utimestamp) {
-		$timestamp = floor($utimestamp);
+		$timestamp = (int)floor($utimestamp);
 		$ms = floor(($utimestamp - $timestamp) * 1000);
 		$ms = str_pad($ms, 3, '0', STR_PAD_LEFT);
 	
